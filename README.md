@@ -4,6 +4,17 @@
 
 Let's talk about Appium in depth! What is Appium? What is the story of Appium and how it came to be what it is? How, generally speaking, does it work, and how do you use it?
 
+### What is Appium?
+
+What is Appium? |
+---- |
+Mobile app/device automation tool (and more). |
+Fully open-source project (development on GitHub, run by OpenJS Foundation). |
+Wraps automation up in a WebDriver interface. Doesn't perform automation *directly*, for much greater flexibility. |
+Allows authoring of automation scripts and tests in any language. |
+Cross-platform API, by and large. |
+Huge community of users and practitioners - lots of places to go for help. |
+
 First of all, what is Appium? Well, Appium is a number of things. Let's go through each of them:
 
 1. First, Appium is a mobile automation tool. You can think of it as being very analogous to Selenium. Selenium's purpose is to allow you to automate web browsers, and Appium's purpose is to allow you to automate mobile devices. Actually, Appium's purpose is bigger than that! It certainly started out as a tool to automate mobile apps, but it has broadened into a generalized tool that aims to give you automation ability for all kinds of apps. But for now, Appium is mostly known as a mobile device and mobile app automation tool, and that is what this course is all about.
@@ -13,7 +24,11 @@ First of all, what is Appium? Well, Appium is a number of things. Let's go throu
 5. Fifth, Appium provides the same API for multiple platforms, which means that you can write test code that looks and feels more or less the same for both the Android and iOS versions of your app. In fact, if you design your test suite well, and if your apps work relatively similarly across both platforms, you can have test code that is exactly the same for both Android and iOS, with no duplication. This is something which would be an impossibility if you used the native frameworks like XCUITest and Espresso.
 6. Sixth, because Appium is open source, it has generated a huge community of practitioners, people who use Appium every day in their work. The result of this is that there is a lot of knowledge out there about how to get stuff done with Appium. There are Appium user forums, Appium chat groups, and lots of online guides to Appium out there, including my own set of articles and tutorials at appiumpro.com.
 
+### Appium's History
+
 How did Appium get to be this way? Let's look at a bit of Appium's history to learn more. Before there was anything called "Appium," a QA manager at a dating company in San Francisco had an idea. The manager was called Dan Cuellar, and his job was to ensure quality for the iOS app. He thought that surely there must be a way to automate the iOS app, the same way we could already do with web browsers. He learned about a little tool from Apple called Instruments, which was a standalone app you ran on a Mac. He discovered that within Instruments, there was the capability type a snippet of JavaScript, and that this would be executed on an iOS device with a sort of automation API called UIAutomation.
+
+<img width="800" src="https://user-images.githubusercontent.com/70295997/226076410-d23485ab-1b98-4ee7-9289-08877118d59b.png">
 
 Dan took this idea with him to the Selenium user conference in 2012, in London, and talked about this idea during a lightning talk. In it, he shared how he'd come up with a way to actually run this UIAutomation JavaScript code from outside the Instruments app, which was something Apple had never intended. This was the crucial insight that would open up the path to Appium, because when you no longer needed to manually open up a desktop app to run the automation code, you could have a fully scriptable automation environment.
 

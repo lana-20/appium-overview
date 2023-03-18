@@ -28,15 +28,32 @@ First of all, what is Appium? Well, Appium is a number of things. Let's go throu
 
 How did Appium get to be this way? Let's look at a bit of Appium's history to learn more. Before there was anything called "Appium," a QA manager at a dating company in San Francisco had an idea. The manager was called Dan Cuellar, and his job was to ensure quality for the iOS app. He thought that surely there must be a way to automate the iOS app, the same way we could already do with web browsers. He learned about a little tool from Apple called Instruments, which was a standalone app you ran on a Mac. He discovered that within Instruments, there was the capability type a snippet of JavaScript, and that this would be executed on an iOS device with a sort of automation API called UIAutomation.
 
-<img width="800" src="https://user-images.githubusercontent.com/70295997/226076410-d23485ab-1b98-4ee7-9289-08877118d59b.png">
+<img width="800" src="https://user-images.githubusercontent.com/70295997/226076481-f5da59e4-9e1d-4990-9b42-d0a6ce3128fd.png">
 
 Dan took this idea with him to the Selenium user conference in 2012, in London, and talked about this idea during a lightning talk. In it, he shared how he'd come up with a way to actually run this UIAutomation JavaScript code from outside the Instruments app, which was something Apple had never intended. This was the crucial insight that would open up the path to Appium, because when you no longer needed to manually open up a desktop app to run the automation code, you could have a fully scriptable automation environment.
 
 Some months later, Jason Huggins was working for a testing company called Sauce Labs, and wanted to find some solution for automating iOS. He recalled Dan's demo at SeleniumConf, because Jason was actually the one who had been chairing the lightning talks! So they got together and hatched a plan to take Dan's idea, and make it something that worked more like WebDriver. It was an obvious thought for Jason, because of his work on Selenium and WebDriver, and it was clear that what the world needed wasn't just mobile automation, but mobile automation that had the same advantages as Selenium. And what could be better than trying to use the same API, to keep life easy for users? That's how the name "Appium" was born--automation like Selenium, but for apps and not just websites!
 
-I happened to be a developer working at Sauce Labs at the time, and got tapped to develop this Appium idea and turn it into reality. And that's what I did! I put together a small team and together we implemented Appium's original iOS support, based on Dan's methods. I then added Android support, bringing Appium into the cross-platform world underneath the standard WebDriver API. The rest, as they say, is history. There have been many changes in Appium since that time, most notably the expansion of the Appium model to other platforms beyond iOS and Android, for example Mac and Windows desktop platforms. But the basic idea has been the same: Appium lets you automate your app in any programming language, without requiring modifications to it, and using standard APIs that thousands of developers already use for web automation. And on top of all this, it's open source, so you don't have to pay for it, and you don't have to be afraid that some company will go and do something nefarious with it for their own purposes!
+Jon Lipps happened to be a developer working at Sauce Labs at the time, and got tapped to develop this Appium idea and turn it into reality. And that's what he did. He put together a small team and together they implemented Appium's original iOS support, based on Dan's methods. Jon then added Android support, bringing Appium into the cross-platform world underneath the standard WebDriver API. The rest, as they say, is history. There have been many changes in Appium since that time, most notably the expansion of the Appium model to other platforms beyond iOS and Android, for example Mac and Windows desktop platforms. But the basic idea has been the same: Appium lets you automate your app in any programming language, without requiring modifications to it, and using standard APIs that thousands of developers already use for web automation. And on top of all this, it's open source, so you don't have to pay for it, and you don't have to be afraid that some company will go and do something nefarious with it for their own purposes.
 
-What features does Appium have, exactly? What can you do with it? Many, many things. You have access to all the basic automation behaviors you'd expect from Selenium or any of the other mobile automation tools. You can find UI elements and interact with them. You can tap, enter text, swipe, and so on. Beyond that, Appium has implemented a whole host of helpful methods that go beyond the UI automation tools Appium wraps, like XCUITest or UiAutomator 2. Appium lets you send files to devices, take screenshots and videos from device screens, start and stop apps, and so on. We'll see a lot of these features throughout the course of our time together here, but you can always explore the Appium documentation to get a broader idea!
+### Appium's Features
+
+Appium's Features |
+---- |
+Basic UI automation behaviors (find and interact with elements) |
+Functionality beyond UI automation |
+Send files, take screenshots, start/stop apps, etc. |
+
+
+What features does Appium have, exactly? What can you do with it? Many, many things. You have access to all the basic automation behaviors you'd expect from Selenium or any of the other mobile automation tools. You can find UI elements and interact with them. You can tap, enter text, swipe, and so on. Beyond that, Appium has implemented a whole host of helpful methods that go beyond the UI automation tools Appium wraps, like XCUITest or UiAutomator 2. Appium lets you send files to devices, take screenshots and videos from device screens, start and stop apps, and so on. We'll see a lot of these features throughout the course of our time together here, but you can always explore the Appium documentation to get a broader idea.
+
+Conceptual Requirements for Appium |
+---- |
+Virtual or test devices. to test on (or cliud service provider) |
+Mobile app development setup (Xcode for iOS, Android Studio for Android) |
+The Appium software (installed via NPM or GUI app) |
+Appium driver(s) for the platform(s) you want to automate (e.g., the XCUITest driver for iOS) |
+Programming language and Appium client library |
 
 How do you use Appium? Well, more or less exactly the same way you use Selenium, with some additional steps because there are requirements for the mobile development and test environments that go well beyond what is required for web development. Here are the things you'll need:
 
@@ -46,7 +63,7 @@ How do you use Appium? Well, more or less exactly the same way you use Selenium,
 4. Fourth, you'll need the appropriate Appium driver for the platform you want to automate. Once you have Appium, you can use it to download drivers without needing to go anywhere else.
 5. Fifth, you'll need a programming language and a Selenium or Appium client library, just like for Selenium.
 
-That's it! With all these pieces, you will be able to write automation scripts in your programming language of choice, starting up whichever apps you like, and automating them as if a little software robot were obeying your commands. OK, that's enough of an overview of Appium for now! Let's move on to a deeper dive into the architecture of both Selenium and Appium.
+With all these pieces, you will be able to write automation scripts in your programming language of choice, starting up whichever apps you like, and automating them as if a little software robot were obeying your commands.
 
 
 
